@@ -11,6 +11,7 @@ function HomePage(){
     const [clickLista,setClickLista] = useState(false)
     const [portalEvent,setPortalEvent] = useState(false)
     const [listaPerson,setListaPerson] = useState([])
+    const [indexImg,setIndexImg] = useState(1)
 
     useEffect(() => {
 
@@ -39,10 +40,10 @@ function HomePage(){
             zIndex: 4,
             opacity: 0,
             transition: {
-                delay: 1,
+                delay: 0.9,
                 repeat: 1,
                 repeatType: "reverse",
-                duration: 0.7,
+                duration: 0.7
             }
         }
     
@@ -57,8 +58,10 @@ function HomePage(){
             <main>
                 <Header />
                 <div className="container__personagem">
+
                     {portalEvent && (<Portal />)}
-                    {listaPerson.slice(0,1).map((infoPerson) => {
+
+                    {listaPerson.slice(indexImg,indexImg + 1).map((infoPerson) => {
                         return (
                             <motion.div key={infoPerson.id - 1} initial="show" animate={clickLista ? 'hidden' : 'show'} variants={slider}>
                                 <div className="personagem">
@@ -71,23 +74,41 @@ function HomePage(){
                                         <br />
                                         <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
                                         <p>{ipConfig.description[0].split('::').slice(1)}</p>
-                                        <div className="preview-fotos-wrapper">
-                                            <div onClick={() => {
-                                                setClickLista(true)
-                                                setPortalEvent(true)
-                                                setTimeout(() => {
-                                                    setClickLista(false)
-                                                    setPortalEvent(false)
-                                                },3000)
-                                            }} className="preview-fotos-single">
-                                                
-                                            </div>
-                                        </div> 
                                     </div>
                                 </div>{/*personagem*/}
                             </motion.div>
                         )
                     })}
+
+                    <div className="arrow-slider">
+
+                        <img className="arrow-left" src="images/arrow-left.png" />
+
+                        <div className="preview-fotos-wrapper"> 
+                            <div className="preview-fotos-scroll">
+                                {listaPerson.slice(0,20).map((infoPerson) => {
+                                    return(
+                                        
+                                        <div key={infoPerson.id - 1} onClick={() => {
+                                            setClickLista(true)
+                                            setPortalEvent(true)
+                                            setTimeout(() => {
+                                                setClickLista(false)
+                                                setPortalEvent(false)
+                                            },2800)
+                                        }} className="preview-fotos-single"><img src={infoPerson.image} /></div>
+
+                                    )   
+                                })}
+                            </div>{/*preview-fotos-scroll*/}
+                        </div>{/*preview-fotos-wrapper*/}
+
+                        <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
+                            let a = document.querySelector('div.preview-fotos-single').keys()
+                            console.log(a)
+                        }} />
+
+                    </div>
                 </div>{/*container__personagem*/}
             </main>
             <style jsx>{`
@@ -100,22 +121,21 @@ function HomePage(){
                 .personagem{
                     width: 100%;
                     display: flex;
-                    flex-wrap: wrap;
                     align-items: center;
-                    justify-content: center;
-                    height: 80vh;
+                    height: 75vh;
                     position: relative;
                     z-index: 4;
                 }
                 .perfil-img{
                     width: 40%;
+                    margin-right: 30px;
                 }
                 .perfil-img img{
-                    max-width: 450px;
+                    max-width: 420px;
+                    min-width: 350px;
                 }
                 .personagem-info{
                     width: 60%;
-                    padding-left: 30px;
                     color: white;
                 }
                 .personagem-info p{
@@ -123,16 +143,41 @@ function HomePage(){
                     margin-top: 10px;
                 }
                 .preview-fotos-wrapper{
+                    width: 800px;
+                    height: 90px;
+                    position: relative;
+                    top: -15px;
+                    z-index: 4;
+                    overflow-x: scroll;
+                    overflow-y: hidden;
+                }
+                .preview-fotos-scroll{
                     display: flex;
-                    background-color: gray;
-                    margin-top: 20px;
-                    width: 100%;
-                    max-width: 500px;
-                    height: 15px;
+                    align-items: center;
+                    padding: 7px 5px;
+                    width: 221%;
                 }
                 .preview-fotos-single{
-                    width: 33.3%;
-                    background-color: red;
+                    padding: 0 5px;
+                }
+                .preview-fotos-single > img{
+                    width: 100%;
+                    cursor: pointer;
+                }
+                .arrow-slider{
+                    display: flex;
+                }
+                .arrow-left{
+                    width: 36px;
+                    height: 36px;
+                    margin-top: 12px;
+                    cursor: pointer;
+                }
+                .arrow-right{
+                    width: 36px;
+                    height: 36px;
+                    margin-top: 12px;
+                    cursor: pointer;
                 }
             `}</style>
         </>
