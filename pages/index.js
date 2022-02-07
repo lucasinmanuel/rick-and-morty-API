@@ -34,7 +34,7 @@ function HomePage(){
             position: "relative",
             zIndex: 4,
             transition: {
-                duration: 0.6
+                duration: 0.5
             }
         },
         hidden: {
@@ -43,7 +43,7 @@ function HomePage(){
             zIndex: 4,
             opacity: 0,
             transition: {
-                delay: 0.7,
+                delay: 0.9,
                 duration: 0.7
             }
         },
