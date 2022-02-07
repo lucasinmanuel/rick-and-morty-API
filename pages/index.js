@@ -82,7 +82,9 @@ function HomePage(){
 
                     <div className="arrow-slider">
 
-                        <img className="arrow-left" src="images/arrow-left.png" />
+                        <img className="arrow-left" src="images/arrow-left.png" onClick={() => {
+                            document.querySelector('.preview-fotos-wrapper').scrollLeft -= '493';
+                        }} />
 
                         <div className="preview-fotos-wrapper"> 
                             <div className="preview-fotos-scroll">
@@ -104,8 +106,7 @@ function HomePage(){
                         </div>{/*preview-fotos-wrapper*/}
 
                         <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
-                            let a = document.querySelector('div.preview-fotos-single').keys()
-                            console.log(a)
+                            document.querySelector('.preview-fotos-wrapper').scrollLeft += '493';
                         }} />
 
                     </div>
@@ -143,19 +144,19 @@ function HomePage(){
                     margin-top: 10px;
                 }
                 .preview-fotos-wrapper{
-                    width: 800px;
-                    height: 90px;
+                    width: 500px;
                     position: relative;
-                    top: -15px;
+                    top: -25px;
                     z-index: 4;
                     overflow-x: scroll;
                     overflow-y: hidden;
+                    scroll-behavior: smooth;
                 }
                 .preview-fotos-scroll{
                     display: flex;
                     align-items: center;
                     padding: 7px 5px;
-                    width: 221%;
+                    width: 396%;
                 }
                 .preview-fotos-single{
                     padding: 0 5px;
@@ -166,6 +167,8 @@ function HomePage(){
                 }
                 .arrow-slider{
                     display: flex;
+                    position: relative;
+                    z-index: 5;
                 }
                 .arrow-left{
                     width: 36px;
