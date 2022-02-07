@@ -32,21 +32,21 @@ function HomePage(){
             opacity: 1,
             x: 0,
             position: "relative",
-            zIndex: 5
+            zIndex: 4,
+            transition: {
+                duration: 0.6
+            }
         },
         hidden: {
-            x: 1200,
+            x: 1300,
             position: "relative",
             zIndex: 4,
             opacity: 0,
             transition: {
-                delay: 0.9,
-                repeat: 1,
-                repeatType: "reverse",
+                delay: 0.7,
                 duration: 0.7
             }
-        }
-    
+        },
     }
 
     return (
@@ -63,7 +63,7 @@ function HomePage(){
 
                     {listaPerson.slice(indexImg,indexImg + 1).map((infoPerson) => {
                         return (
-                            <motion.div key={infoPerson.id - 1} initial="show" animate={clickLista ? 'hidden' : 'show'} variants={slider}>
+                            <motion.div key={infoPerson.id - 1} initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
                                 <div className="personagem">
                                     <div className="perfil-img">
                                         <img width="100%" src={infoPerson.image} />
@@ -95,7 +95,10 @@ function HomePage(){
                                             setClickLista(true)
                                             setPortalEvent(true)
                                             setTimeout(() => {
+                                                setIndexImg(infoPerson.id -1)
                                                 setClickLista(false)
+                                            },1500)
+                                            setTimeout(() => {
                                                 setPortalEvent(false)
                                             },2800)
                                         }} className="preview-fotos-single"><img src={infoPerson.image} /></div>
