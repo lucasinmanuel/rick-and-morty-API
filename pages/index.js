@@ -11,7 +11,7 @@ function HomePage(){
     const [clickLista,setClickLista] = useState(false)
     const [portalEvent,setPortalEvent] = useState(false)
     const [listaPerson,setListaPerson] = useState([])
-    const [indexImg,setIndexImg] = useState(1)
+    const [indexInfo,setIndexInfo] = useState(0)
 
     useEffect(() => {
 
@@ -61,7 +61,7 @@ function HomePage(){
 
                     {portalEvent && (<Portal />)}
 
-                    {listaPerson.slice(indexImg,indexImg + 1).map((infoPerson) => {
+                    {listaPerson.slice(indexInfo,indexInfo + 1).map((infoPerson) => {
                         return (
                             <motion.div key={infoPerson.id - 1} initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
                                 <div className="personagem">
@@ -73,7 +73,7 @@ function HomePage(){
                                         <span><b>Origem: </b>{infoPerson.origin.name}</span>
                                         <br />
                                         <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
-                                        <p>{ipConfig.description[0].split('::').slice(1)}</p>
+                                        <p>{ipConfig.description[infoPerson.id - 1].split('::').slice(1)}</p>
                                     </div>
                                 </div>{/*personagem*/}
                             </motion.div>
@@ -83,7 +83,7 @@ function HomePage(){
                     <div className="arrow-slider">
 
                         <img className="arrow-left" src="images/arrow-left.png" onClick={() => {
-                            document.querySelector('.preview-fotos-wrapper').scrollLeft -= '493';
+                            document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493;
                         }} />
 
                         <div className="preview-fotos-wrapper"> 
@@ -95,7 +95,7 @@ function HomePage(){
                                             setClickLista(true)
                                             setPortalEvent(true)
                                             setTimeout(() => {
-                                                setIndexImg(infoPerson.id -1)
+                                                setIndexInfo(infoPerson.id -1)
                                                 setClickLista(false)
                                             },1500)
                                             setTimeout(() => {
@@ -109,7 +109,7 @@ function HomePage(){
                         </div>{/*preview-fotos-wrapper*/}
 
                         <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
-                            document.querySelector('.preview-fotos-wrapper').scrollLeft += 493
+                            document.querySelector('.preview-fotos-wrapper').scrollLeft += 493;
                         }} />
 
                     </div>
