@@ -11,13 +11,15 @@ export default function DesktopStyles(){
                 width: 100%;
                 display: flex;
                 align-items: center;
-                height: 75vh;
                 position: relative;
                 z-index: 4;
+                margin-top: 55px;
+                margin-bottom: 35px;
             }
             .perfil-img{
                 width: 40%;
                 margin-right: 30px;
+                margin-left: 54px;
             }
             .perfil-img img{
                 max-width: 420px;
@@ -27,8 +29,11 @@ export default function DesktopStyles(){
                 width: 60%;
                 color: white;
             }
+            .personagem-info h1{
+                margin-bottom: 10px;
+            }
             .personagem-info p{
-                max-width: 500px;
+                max-width: 450px;
                 margin-top: 10px;
             }
             .preview-fotos-wrapper{
@@ -61,16 +66,22 @@ export default function DesktopStyles(){
             .arrow-left{
                 width: 36px;
                 height: 36px;
-                margin-top: 12px;
+                margin-top: 10px;
                 margin-right: 8px;
                 cursor: pointer;
             }
             .arrow-right{
                 width: 36px;
                 height: 36px;
-                margin-top: 12px;
+                margin-top: 10px;
                 margin-left: 8px;
                 cursor: pointer;
+            }
+
+            @media screen and (max-width: 1130px){
+                .personagem-info p{
+                    max-width: 410px;
+                }
             }
         `}</style>
     )

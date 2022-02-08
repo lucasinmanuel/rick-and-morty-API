@@ -26,7 +26,7 @@ function HomePage(){
             setListaPerson(personId)
          
         })
- 
+
     },[]) 
 
     const slider = {
