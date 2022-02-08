@@ -14,7 +14,7 @@ export default function DesktopStyles(){
                 position: relative;
                 z-index: 4;
                 margin-top: 55px;
-                margin-bottom: 35px;
+                margin-bottom: 20px;
             }
             .perfil-img{
                 width: 40%;
@@ -22,7 +22,7 @@ export default function DesktopStyles(){
                 margin-left: 54px;
             }
             .perfil-img img{
-                max-width: 420px;
+                max-width: 400px;
                 min-width: 350px;
             }
             .personagem-info{
@@ -39,7 +39,6 @@ export default function DesktopStyles(){
             .preview-fotos-wrapper{
                 width: 500px;
                 position: relative;
-                top: -25px;
                 z-index: 4;
                 overflow-x: hidden;
                 overflow-y: hidden;

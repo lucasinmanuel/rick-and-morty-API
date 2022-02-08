@@ -8,18 +8,14 @@ export default function MobileStyles(){
                     overflow-y: auto;
                     overflow-x: hidden;
                 }
+                .container__personagem{
+                    padding: 0 3% 40px 3%;
+                }
                 .personagem{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    z-index: 4;
-
                     flex-direction: column;
                     margin-top: 50px;
                     text-align: center;
                     justify-content: center;
-                    height: auto;
                 }
                 .perfil-img{
                     width: 100%;
@@ -44,7 +40,7 @@ export default function MobileStyles(){
                     display: none;
                 }
                 .preview-fotos-wrapper{
-                    width: 400px;
+                    width: 100%;
                     position: relative;
                     top: 0;
                 }
@@ -52,10 +48,14 @@ export default function MobileStyles(){
                     display: flex;
                     align-items: center;
                     padding: 7px 5px;
-                    width: 976%;
+                    width: 989%;
+                }
+                .preview-fotos-single{
+                    width: 50%;
                 }
                 .arrow-slider{
                     align-items: center;
+                    
                 }
                 .arrow-left{
                     margin-top: 0;

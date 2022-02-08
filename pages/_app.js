@@ -17,7 +17,8 @@ function GlobalStyles(){
             }
 
             body{
-                overflow: hidden;
+                overflow-y: auto;
+                overflow-x: hidden;
                 height: 100vh;
                 background-color: black;
                 font-family: 'Open Sans', sans-serif; 
