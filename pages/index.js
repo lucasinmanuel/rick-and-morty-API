@@ -109,7 +109,7 @@ function HomePage(){
                         </div>{/*preview-fotos-wrapper*/}
 
                         <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
-                            document.querySelector('.preview-fotos-wrapper').scrollLeft += '493';
+                            document.querySelector('.preview-fotos-wrapper').scrollLeft += 493
                         }} />
 
                     </div>
@@ -151,7 +151,7 @@ function HomePage(){
                     position: relative;
                     top: -25px;
                     z-index: 4;
-                    overflow-x: scroll;
+                    overflow-x: hidden;
                     overflow-y: hidden;
                     scroll-behavior: smooth;
                 }
@@ -177,12 +177,14 @@ function HomePage(){
                     width: 36px;
                     height: 36px;
                     margin-top: 12px;
+                    margin-right: 8px;
                     cursor: pointer;
                 }
                 .arrow-right{
                     width: 36px;
                     height: 36px;
                     margin-top: 12px;
+                    margin-left: 8px;
                     cursor: pointer;
                 }
             `}</style>
