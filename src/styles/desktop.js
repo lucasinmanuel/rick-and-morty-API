@@ -2,7 +2,7 @@ export default function DesktopStyles(){
     return (
         <style global jsx>{`
             .container__personagem{
-                padding: 0 3%;
+                padding: 0 3% 20px 3%;
                 margin: 0 auto;
                 max-width: 1280px;
                 position: relative;
@@ -47,7 +47,7 @@ export default function DesktopStyles(){
             .preview-fotos-scroll{
                 display: flex;
                 align-items: center;
-                padding: 7px 5px;
+                padding: 7px 0;
                 width: 396%;
             }
             .preview-fotos-single{
@@ -65,14 +65,14 @@ export default function DesktopStyles(){
             .arrow-left{
                 width: 36px;
                 height: 36px;
-                margin-top: 10px;
+                margin-top: 35px;
                 margin-right: 8px;
                 cursor: pointer;
             }
             .arrow-right{
                 width: 36px;
                 height: 36px;
-                margin-top: 10px;
+                margin-top: 35px;
                 margin-left: 8px;
                 cursor: pointer;
             }

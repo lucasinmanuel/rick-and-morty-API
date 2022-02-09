@@ -85,7 +85,16 @@ function HomePage(){
                     <div className="arrow-slider">
 
                         <img className="arrow-left" src="images/arrow-left.png" onClick={() => {
-                            document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493;
+                            
+                            var i = 19;
+                            i--;
+                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
+                            if(window.innerWidth > 1020){
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493.2;
+                            }else{
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX * 2;
+                            }
+                    
                         }} />
 
                         <div className="preview-fotos-wrapper"> 
@@ -93,7 +102,7 @@ function HomePage(){
                                 {listaPerson.slice(0,20).map((infoPerson) => {
                                     return(
                                         
-                                        <div key={infoPerson.id - 1} onClick={() => {
+                                        <div className="preview-fotos-single" key={infoPerson.id - 1} onClick={portalEvent ? () => {} : () => {
                                             setClickLista(true)
                                             setPortalEvent(true)
                                             setTimeout(() => {
@@ -103,7 +112,7 @@ function HomePage(){
                                             setTimeout(() => {
                                                 setPortalEvent(false)
                                             },2800)
-                                        }} className="preview-fotos-single"><img src={infoPerson.image} /></div>
+                                        }}><img src={infoPerson.image} /></div>
 
                                     )   
                                 })}
@@ -111,7 +120,14 @@ function HomePage(){
                         </div>{/*preview-fotos-wrapper*/}
 
                         <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
-                            document.querySelector('.preview-fotos-wrapper').scrollLeft += 493;
+                            var i = 1;
+                            i++;
+                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
+                            if(window.innerWidth > 1020){
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft += 494;
+                            }else{
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX * 2;
+                            }   
                         }} />
 
                     </div>

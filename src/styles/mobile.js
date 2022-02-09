@@ -52,6 +52,7 @@ export default function MobileStyles(){
                 }
                 .preview-fotos-single{
                     width: 50%;
+                    padding: 0 12px;
                 }
                 .arrow-slider{
                     align-items: center;

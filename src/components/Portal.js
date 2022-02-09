@@ -16,6 +16,7 @@ export default function Portal(){
                 video.portal{
                     position: absolute;
                     right: -110px;
+                    height: 100vh;
                     max-height: 617px;
                     top: -20%;
                     z-index: 1;
@@ -29,6 +30,7 @@ export default function Portal(){
                     right: -1032px;
                     top: -20%;
                     z-index: 5;
+                    height: 100vh;
                     max-height: 617px;
                     -moz-filter: blur(1.5px);
                     -o-filter: blur(1.5px);
