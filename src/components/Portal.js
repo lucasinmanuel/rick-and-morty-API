@@ -16,9 +16,8 @@ export default function Portal(){
                 video.portal{
                     position: absolute;
                     right: -110px;
-                    height: 100vh;
-                    max-height: 617px;
-                    top: -20%;
+                    max-height: 560px;
+                    top: -25px;
                     z-index: 1;
                     -moz-filter: blur(1.5px);
                     -o-filter: blur(1.5px);
@@ -27,11 +26,10 @@ export default function Portal(){
                 }
                 video.portal-mascara{
                     position: absolute;
-                    right: -1032px;
-                    top: -20%;
+                    right: -948px;
+                    top: -25px;
                     z-index: 5;
-                    height: 100vh;
-                    max-height: 617px;
+                    max-height: 560px;
                     -moz-filter: blur(1.5px);
                     -o-filter: blur(1.5px);
                     -ms-filter: blur(1.5px);

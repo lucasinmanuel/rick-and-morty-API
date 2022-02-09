@@ -2,7 +2,7 @@ export default function DesktopStyles(){
     return (
         <style global jsx>{`
             .container__personagem{
-                padding: 0 3% 20px 3%;
+                padding: 0 calc(3% - 1px);
                 margin: 0 auto;
                 max-width: 1280px;
                 position: relative;
@@ -13,17 +13,14 @@ export default function DesktopStyles(){
                 align-items: center;
                 position: relative;
                 z-index: 4;
-                margin-top: 55px;
-                margin-bottom: 20px;
+                top: 70px;
+                left: 50px;
             }
             .perfil-img{
-                width: 40%;
-                margin-right: 30px;
-                margin-left: 54px;
+                margin-right: 40px;
             }
             .perfil-img img{
-                max-width: 400px;
-                min-width: 350px;
+                width: 370px;
             }
             .personagem-info{
                 width: 60%;
@@ -42,7 +39,6 @@ export default function DesktopStyles(){
                 z-index: 4;
                 overflow-x: hidden;
                 overflow-y: hidden;
-                scroll-behavior: smooth;
             }
             .preview-fotos-scroll{
                 display: flex;
@@ -59,8 +55,11 @@ export default function DesktopStyles(){
             }
             .arrow-slider{
                 display: flex;
-                position: relative;
+                position: absolute;
+                left: 0;
+                top: 460px;
                 z-index: 5;
+                margin-left: 3%;
             }
             .arrow-left{
                 width: 36px;

@@ -16,12 +16,15 @@ function GlobalStyles(){
                 max-width: 1280px;
             }
 
+            html,body{
+                height: 100%; 
+            }
+
             body{
                 overflow-y: auto;
                 overflow-x: hidden;
-                height: 100vh;
                 background-color: black;
-                font-family: 'Open Sans', sans-serif; 
+                font-family: 'Open Sans', sans-serif;
             }
 
         `}</style>

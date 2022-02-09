@@ -33,7 +33,8 @@ function HomePage(){
         show: {
             opacity: 1,
             x: 0,
-            position: "relative",
+            y: 0,
+            position: "absolute",
             zIndex: 4,
             transition: {
                 duration: 0.5
@@ -41,7 +42,8 @@ function HomePage(){
         },
         hidden: {
             x: 1300,
-            position: "relative",
+            y: 0,
+            position: "absolute",
             zIndex: 4,
             opacity: 0,
             transition: {
@@ -92,7 +94,7 @@ function HomePage(){
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493.2;
                             }else{
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX * 2;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= (previewOffSetX * 2) + 1;
                             }
                     
                         }} />
@@ -103,11 +105,7 @@ function HomePage(){
                                     return(
                                         
                                         <div className="preview-fotos-single" key={infoPerson.id - 1} onClick={portalEvent ? () => {} : () => {
-                                            if(window.innerWidth > 1020){
-                                                setPortalEvent(true)
-                                            }else{
-                                                setPortalEvent(false)
-                                            }
+                                            setPortalEvent(true)
                                             setClickLista(true)
                                             setTimeout(() => {
                                                 setIndexInfo(infoPerson.id -1)
@@ -131,7 +129,7 @@ function HomePage(){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += 494;
                             }else{
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX * 2;
-                            }   
+                            }
                         }} />
 
                     </div>
