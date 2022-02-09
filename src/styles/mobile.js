@@ -42,10 +42,6 @@ export default function MobileStyles(){
                     padding: 7px 5px;
                     width: 989%;
                 }
-                .preview-fotos-single{
-                    width: 50%;
-                    padding: 0 10px;
-                }
                 .preview-fotos-single > img{
                     width: 100%;
                 }
@@ -55,6 +51,7 @@ export default function MobileStyles(){
                     transform: translate(-50%);
                     top: 685px;
                     padding: 0 3%;
+                    margin: 0;
                 }
                 .arrow-left{
                     margin-top: 0;
@@ -71,9 +68,6 @@ export default function MobileStyles(){
                 .arrow-slider{
                     top: 710px;
                 }
-                .preview-fotos-single{
-                    padding: 0 12px;
-                }
             }
 
             @media screen and (max-width: 630px){
@@ -83,9 +77,6 @@ export default function MobileStyles(){
                 .arrow-slider{
                     top: 730px;
                 }
-                .preview-fotos-single{
-                    padding: 0 8px;
-                }
             }
 
             @media screen and (max-width: 520px){
@@ -94,9 +85,6 @@ export default function MobileStyles(){
                 }
                 .arrow-slider{
                     top: 760px;
-                }
-                .preview-fotos-single{
-                    padding: 0 8px;
                 }
             }
 
