@@ -94,7 +94,7 @@ function HomePage(){
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493.2;
                             }else{
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= (previewOffSetX * 2) + 1;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX * 2;
                             }
                     
                         }} />
