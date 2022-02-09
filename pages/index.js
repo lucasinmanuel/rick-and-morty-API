@@ -103,8 +103,12 @@ function HomePage(){
                                     return(
                                         
                                         <div className="preview-fotos-single" key={infoPerson.id - 1} onClick={portalEvent ? () => {} : () => {
+                                            if(window.innerWidth > 1020){
+                                                setPortalEvent(true)
+                                            }else{
+                                                setPortalEvent(false)
+                                            }
                                             setClickLista(true)
-                                            setPortalEvent(true)
                                             setTimeout(() => {
                                                 setIndexInfo(infoPerson.id -1)
                                                 setClickLista(false)
