@@ -153,7 +153,7 @@ function HomePage(){
                         
                     </div>{/*arrow-slider*/}
 
-                    <button>Desativar Portal</button>
+                    <button className="offPortal"><img src="images/arma-portais.png" /></button>
                 </div>{/*container__personagem*/}
             </main>
             <DesktopStyles />
