@@ -112,7 +112,8 @@ function HomePage(){
                                                 setClickLista(false)
                                             },1500)
                                             setTimeout(() => {
-                                                document.body.scroll = '0'
+                                                document.body.scrollTop = '0'
+                                                document.body.scrollLeft = '0'
                                                 setPortalEvent(false)
                                             },2800)
                                         }}><img src={infoPerson.image} /></div>
