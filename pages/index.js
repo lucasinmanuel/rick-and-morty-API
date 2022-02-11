@@ -67,7 +67,7 @@ function HomePage(){
 
                     {listaPerson.slice(indexInfo,indexInfo + 1).map((infoPerson) => {
                         return (
-                            <motion.div key={infoPerson.id - 1} initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
+                            
                                 <div className="personagem">
                                     <div className="perfil-img">
                                         <img width="100%" src={infoPerson.image} />
@@ -79,8 +79,8 @@ function HomePage(){
                                         <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
                                         <p>{ipConfig.description[infoPerson.id - 1].split('::').slice(1)}</p>
                                     </div>
-                                </div>{/*personagem*/}
-                            </motion.div>
+                                </div>/*personagem*/
+              
                         )
                     })}
 
