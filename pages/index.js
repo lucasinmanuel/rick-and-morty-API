@@ -34,6 +34,7 @@ function HomePage(){
             opacity: 1,
             x: 0,
             y: 0,
+            overflow: 'hidden',
             position: "absolute",
             zIndex: 4,
             transition: {
@@ -43,6 +44,7 @@ function HomePage(){
         hidden: {
             x: 1300,
             y: 0,
+            overflow: 'hidden',
             position: "absolute",
             zIndex: 4,
             opacity: 0,
@@ -67,7 +69,7 @@ function HomePage(){
 
                     {listaPerson.slice(indexInfo,indexInfo + 1).map((infoPerson) => {
                         return (
-                            
+                            <motion.div initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
                                 <div className="personagem">
                                     <div className="perfil-img">
                                         <img width="100%" src={infoPerson.image} />
@@ -79,8 +81,8 @@ function HomePage(){
                                         <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
                                         <p>{ipConfig.description[infoPerson.id - 1].split('::').slice(1)}</p>
                                     </div>
-                                </div>/*personagem*/
-              
+                                </div>{/*personagem*/}
+                            </motion.div>
                         )
                     })}
 
