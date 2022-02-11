@@ -151,7 +151,9 @@ function HomePage(){
                             }
                         }} />
 
-                    </div>
+                    </div>{/*arrow-slider*/}
+
+                    <button>Desativar Portal</button>
                 </div>{/*container__personagem*/}
             </main>
             <DesktopStyles />
