@@ -66,8 +66,25 @@ function HomePage(){
                     {portalEvent && (<Portal />)}
 
                     {listaPerson.slice(indexInfo,indexInfo + 1).map((infoPerson) => {
-                        return (
-                            <motion.div initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
+                        if(window.innerWidth > 1020){
+                            return (
+                                <motion.div initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
+                                    <div className="personagem">
+                                        <div className="perfil-img">
+                                            <img width="100%" src={infoPerson.image} />
+                                        </div>
+                                        <div className="personagem-info">
+                                            <h1>{infoPerson.name}</h1>
+                                            <span><b>Origem: </b>{infoPerson.origin.name}</span>
+                                            <br />
+                                            <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
+                                            <p>{ipConfig.description[infoPerson.id - 1].split('::').slice(1)}</p>
+                                        </div>
+                                    </div>{/*personagem*/}
+                                </motion.div>
+                            )
+                        }else{
+                            return (
                                 <div className="personagem">
                                     <div className="perfil-img">
                                         <img width="100%" src={infoPerson.image} />
@@ -79,9 +96,11 @@ function HomePage(){
                                         <span><b>Espécie: </b>{infoPerson.species} / <b>Gênero: </b>{infoPerson.gender}</span>
                                         <p>{ipConfig.description[infoPerson.id - 1].split('::').slice(1)}</p>
                                     </div>
-                                </div>{/*personagem*/}
-                            </motion.div>
-                        )
+                                </div>/*personagem*/
+                            )
+                            
+                        }
+                        
                     })}
 
                     <div className="arrow-slider">
@@ -112,8 +131,6 @@ function HomePage(){
                                                 setClickLista(false)
                                             },1500)
                                             setTimeout(() => {
-                                                document.body.scrollTop = '0'
-                                                document.body.scrollLeft = '0'
                                                 setPortalEvent(false)
                                             },2800)
                                         }}><img src={infoPerson.image} /></div>
