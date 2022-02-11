@@ -150,7 +150,7 @@ function HomePage(){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX * 2;
                             }
                         }} />
-
+                        
                     </div>{/*arrow-slider*/}
 
                     <button>Desativar Portal</button>
