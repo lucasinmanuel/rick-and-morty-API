@@ -34,6 +34,7 @@ function HomePage(){
             opacity: 1,
             x: 0,
             y: 0,
+            height: 'auto',
             overflow: 'hidden',
             position: "absolute",
             zIndex: 4,
