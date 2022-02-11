@@ -47,77 +47,17 @@ export default function MobileStyles(){
                 }
                 .arrow-slider{
                     align-items: center;
-                    left: 50%;
-                    transform: translate(-50%);
-                    top: 685px;
+                    justify-content: center;
+                    position: relative;
+                    top: 75px;
                     padding: 0 3%;
-                    margin: 0;
+                    margin: 0 auto;
                 }
                 .arrow-left{
                     margin-top: 0;
                 }
                 .arrow-right{
                     margin-top: 0;
-                }
-            }
-
-            @media screen and (max-width: 780px){
-                .preview-fotos-wrapper{
-                    width: 460px;
-                }
-                .arrow-slider{
-                    top: 710px;
-                }
-            }
-
-            @media screen and (max-width: 630px){
-                .preview-fotos-wrapper{
-                    width: 380px;
-                }
-                .arrow-slider{
-                    top: 730px;
-                }
-            }
-
-            @media screen and (max-width: 520px){
-                .preview-fotos-wrapper{
-                    width: 320px;
-                }
-                .arrow-slider{
-                    top: 760px;
-                }
-            }
-
-            @media screen and (max-width: 480px){
-                .preview-fotos-wrapper{
-                    width: 300px;
-                }
-                .arrow-slider{
-                    top: 770px;
-                }
-            }
-
-            @media screen and (max-width: 420px){
-                .perfil-img img{
-                    width: 300px;
-                }
-                .preview-fotos-wrapper{
-                    width: 270px;
-                }
-                .arrow-slider{
-                    top: 810px;
-                }
-            }
-
-            @media screen and (max-width: 350px){
-                .perfil-img img{
-                    width: 250px;
-                }
-                .preview-fotos-wrapper{
-                    width: 200px;
-                }
-                .arrow-slider{
-                    top: 850px;
                 }
             }
         

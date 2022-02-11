@@ -12,6 +12,7 @@ function HomePage(){
 
     const [clickLista,setClickLista] = useState(false)
     const [portalEvent,setPortalEvent] = useState(false)
+    const [disablePortal,setDisablePortal] = useState(true)
     const [listaPerson,setListaPerson] = useState([])
     const [indexInfo,setIndexInfo] = useState(0)
 
@@ -27,6 +28,16 @@ function HomePage(){
          
         })
 
+        const portalGun =  document.querySelector('.menu-desktop li:last-child');
+
+        portalGun.addEventListener('click',() => {
+                
+            setDisablePortal(false)
+            portalGun.style.opacity = '0.5'
+
+        })
+
+
     },[]) 
 
     const slider = {
@@ -34,7 +45,7 @@ function HomePage(){
             opacity: 1,
             x: 0,
             y: 0,
-            position: "absolute",
+            position: "relative",
             zIndex: 4,
             transition: {
                 duration: 0.5
@@ -43,7 +54,7 @@ function HomePage(){
         hidden: {
             x: 1300,
             y: 0,
-            position: "absolute",
+            position: "relative",
             zIndex: 4,
             opacity: 0,
             transition: {
@@ -60,7 +71,7 @@ function HomePage(){
                 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
             </Head>
             <main>
-                <Header />
+                <Header props={disablePortal} />
                 <div className="container__personagem">
 
                     {portalEvent && (<Portal />)}
@@ -124,15 +135,23 @@ function HomePage(){
                                     return(
                                         
                                         <div className="preview-fotos-single" key={infoPerson.id - 1} onClick={portalEvent ? () => {} : () => {
-                                            setPortalEvent(true)
-                                            setClickLista(true)
-                                            setTimeout(() => {
-                                                setIndexInfo(infoPerson.id -1)
-                                                setClickLista(false)
-                                            },1500)
-                                            setTimeout(() => {
+                                           
+                                            if(disablePortal === true){
+                                                setPortalEvent(true)
+                                                setClickLista(true)
+                                                setTimeout(() => {
+                                                    setIndexInfo(infoPerson.id -1)
+                                                    setClickLista(false)
+                                                },1500)
+                                                setTimeout(() => {
+                                                    setPortalEvent(false)
+                                                },2800)
+                                            }else{
                                                 setPortalEvent(false)
-                                            },2800)
+                                                setClickLista(false)
+                                                setIndexInfo(infoPerson.id -1)
+                                            }       
+
                                         }}><img src={infoPerson.image} /></div>
 
                                     )   
@@ -153,7 +172,6 @@ function HomePage(){
                         
                     </div>{/*arrow-slider*/}
 
-                    <button className="offPortal"><img src="images/arma-portais.png" /></button>
                 </div>{/*container__personagem*/}
             </main>
             <DesktopStyles />

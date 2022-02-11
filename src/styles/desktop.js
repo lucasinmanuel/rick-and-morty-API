@@ -7,23 +7,13 @@ export default function DesktopStyles(){
                 max-width: 1280px;
                 position: relative;
             }
-            .offPortal{
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin-left: 3%;
-                border: 0;
-                background-color: #97d7d7;
-                height: 30px;
-                padding: 2px;
-            }
             .personagem{
                 width: 100%;
                 display: flex;
                 align-items: center;
                 position: relative;
                 z-index: 4;
-                top: 70px;
+                top: 60px;
                 left: 50px;
             }
             .perfil-img{
