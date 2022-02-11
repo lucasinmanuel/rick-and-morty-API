@@ -34,8 +34,6 @@ function HomePage(){
             opacity: 1,
             x: 0,
             y: 0,
-            height: 'auto',
-            overflow: 'hidden',
             position: "absolute",
             zIndex: 4,
             transition: {
@@ -45,7 +43,6 @@ function HomePage(){
         hidden: {
             x: 1300,
             y: 0,
-            overflow: 'hidden',
             position: "absolute",
             zIndex: 4,
             opacity: 0,
@@ -115,6 +112,7 @@ function HomePage(){
                                                 setClickLista(false)
                                             },1500)
                                             setTimeout(() => {
+                                                document.body.scroll = '0'
                                                 setPortalEvent(false)
                                             },2800)
                                         }}><img src={infoPerson.image} /></div>
