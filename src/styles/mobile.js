@@ -3,6 +3,11 @@ export default function MobileStyles(){
         <style global jsx>{`
         
             @media screen and (max-width: 1020px){
+                /*Header-inicio*/
+                nav.menu-desktop{
+                    display: none;
+                }
+                /*Header-final*/
                 .container__personagem{
                     padding: 0;
                 }
@@ -26,8 +31,10 @@ export default function MobileStyles(){
                     margin-top: 10px;
                 }
                 .personagem-info p{
-                    max-width: none;
+                    max-width: 500px;
                     margin-top: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
                     padding: 0 3%;
                 }
                 .portal-wrapper{

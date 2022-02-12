@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React, {useState} from 'react';
+import { useRouter } from 'next/router';
 
 export default function Header(){
 
     const [hoverInfoPortal,setHoverInfoPortal] = useState(false)
+    const [disablePortal,setDisablePortal] = useState(true)
+    const router = useRouter()
     
     return (
         <>
@@ -24,9 +27,22 @@ export default function Header(){
                         <ul>
                             <li><Link href="/"><a>Home</a></Link></li>
                             <li><Link href="/sobre"><a>Sobre</a></Link></li>
-                            <li onMouseOver={() => {setTimeout(() => {setHoverInfoPortal(true)},2000)}}
-                            onMouseOut={() => {setHoverInfoPortal(false)}}>
-                                <button className="offPortal"><img src="images/arma-portais.png" /></button>
+                            <li>
+                                <button onClick={() => {
+                                    if(disablePortal === true){
+                                        document.querySelector('.menu-desktop li:last-child').style.opacity = 1;
+                                        setDisablePortal(false)
+                                        router.push(`?portalGun=${disablePortal}`)
+                                    }else{
+                                        document.querySelector('.menu-desktop li:last-child').style.opacity = 0.5;
+                                        setDisablePortal(true)
+                                        router.push(`?portalGun=${disablePortal}`)
+                                    }
+                                }}
+                                onMouseOver={() => {setHoverInfoPortal(true)}}
+                                onMouseOut={() => {setHoverInfoPortal(false)}}>
+                                    <img src="images/arma-portais.png" />
+                                </button>
                             </li>
                         </ul>
                     </nav>
@@ -67,9 +83,10 @@ export default function Header(){
                     margin-left: 20px;
                 }
 
-                button.offPortal{
+                .menu-desktop button{
                     cursor: pointer;
                     position: relative;
+                    z-index: 20;
                     top: 8px;
                     left: 0;
                     border: 0;
@@ -78,7 +95,7 @@ export default function Header(){
                     height: 38px;
                     padding: 5px;
                 }
-                .offPortal img{
+                .menu-desktop button img{
                     width: 22px;
                 }
                 .boxPortal-info{

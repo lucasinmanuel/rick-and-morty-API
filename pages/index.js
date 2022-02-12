@@ -3,16 +3,20 @@ import Header from '../src/components/Header';
 import Portal from '../src/components/Portal'
 import DesktopStyles from '../src/styles/desktop';
 import MobileStyles from '../src/styles/mobile';
-import ipConfig from '../config.json'
+import ipConfig from '../config.json';
 import React, {useState,useEffect} from 'react';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import {motion} from 'framer-motion';
 
 function HomePage(){
 
+    const router = useRouter();
+    const portaStatus = router.query.portalGun;
+
     const [clickLista,setClickLista] = useState(false)
     const [portalEvent,setPortalEvent] = useState(false)
-    const [disablePortal,setDisablePortal] = useState(true)
+    const [disablePortal,setDisablePortal] = useState('true') //valor pego pela URL true e false
     const [listaPerson,setListaPerson] = useState([])
     const [indexInfo,setIndexInfo] = useState(0)
 
@@ -22,24 +26,16 @@ function HomePage(){
             method: 'get',
             url: 'https://rickandmortyapi.com/api/character',
         }).then((res) => {
-    
+            
             var personId = res.data.results
             setListaPerson(personId)
          
         })
 
-        const portalGun =  document.querySelector('.menu-desktop li:last-child');
-
-        portalGun.addEventListener('click',() => {
-                
-            setDisablePortal(false)
-            portalGun.style.opacity = '0.5'
-
-        })
-
-
-    },[]) 
-
+        setDisablePortal(portaStatus)
+   
+    },[portaStatus])
+    
     const slider = {
         show: {
             opacity: 1,
@@ -71,7 +67,7 @@ function HomePage(){
                 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
             </Head>
             <main>
-                <Header props={disablePortal} />
+                <Header />
                 <div className="container__personagem">
 
                     {portalEvent && (<Portal />)}
@@ -79,7 +75,7 @@ function HomePage(){
                     {listaPerson.slice(indexInfo,indexInfo + 1).map((infoPerson) => {
                         if(window.innerWidth > 1020){
                             return (
-                                <motion.div initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
+                                <motion.div key={infoPerson.id - 1} initial={clickLista ? 'hidden' : 'show'} animate={clickLista ? 'hidden' : 'show'} variants={slider}>
                                     <div className="personagem">
                                         <div className="perfil-img">
                                             <img width="100%" src={infoPerson.image} />
@@ -96,7 +92,7 @@ function HomePage(){
                             )
                         }else{
                             return (
-                                <div className="personagem">
+                                <div key={infoPerson.id - 1} className="personagem">
                                     <div className="perfil-img">
                                         <img width="100%" src={infoPerson.image} />
                                     </div>
@@ -136,20 +132,26 @@ function HomePage(){
                                         
                                         <div className="preview-fotos-single" key={infoPerson.id - 1} onClick={portalEvent ? () => {} : () => {
                                            
-                                            if(disablePortal === true){
-                                                setPortalEvent(true)
-                                                setClickLista(true)
-                                                setTimeout(() => {
-                                                    setIndexInfo(infoPerson.id -1)
-                                                    setClickLista(false)
-                                                },1500)
-                                                setTimeout(() => {
-                                                    setPortalEvent(false)
-                                                },2800)
-                                            }else{
+                                            if(disablePortal === 'false'){
                                                 setPortalEvent(false)
                                                 setClickLista(false)
                                                 setIndexInfo(infoPerson.id -1)
+                                            }else{
+                                                if(window.innerWidth > 1020){
+                                                    setPortalEvent(true)
+                                                    setClickLista(true)
+                                                    setTimeout(() => {
+                                                        setIndexInfo(infoPerson.id -1)
+                                                        setClickLista(false)
+                                                    },1500)
+                                                    setTimeout(() => {
+                                                        setPortalEvent(false)
+                                                    },2800)
+                                                }else{
+                                                    setPortalEvent(false)
+                                                    setClickLista(false)
+                                                    setIndexInfo(infoPerson.id -1)
+                                                }
                                             }       
 
                                         }}><img src={infoPerson.image} /></div>
