@@ -1,6 +1,9 @@
 export default function DesktopStyles(){
     return (
         <style global jsx>{`
+            html{
+                scroll-behavior: smooth;
+            }
             .container__personagem{
                 padding: 0 calc(3% - 1px);
                 margin: 0 auto;
@@ -14,7 +17,7 @@ export default function DesktopStyles(){
                 position: relative;
                 z-index: 4;
                 top: 60px;
-                left: 50px;
+                left: 54px;
             }
             .perfil-img{
                 margin-right: 40px;
@@ -34,17 +37,18 @@ export default function DesktopStyles(){
                 margin-top: 10px;
             }
             .preview-fotos-wrapper{
-                width: 500px;
+                width: 550px;
                 position: relative;
                 z-index: 4;
                 overflow-x: hidden;
                 overflow-y: hidden;
+                scroll-behavior: smooth;
             }
             .preview-fotos-scroll{
                 display: flex;
                 align-items: center;
-                padding: 7px 0;
-                width: 396%;
+                padding: 7px 4px;
+                width: 395%;
             }
             .preview-fotos-single{
                 padding: 0 5px;

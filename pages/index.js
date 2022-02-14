@@ -12,13 +12,15 @@ import {motion} from 'framer-motion';
 function HomePage(){
 
     const router = useRouter();
-    const portaStatus = router.query.portalGun;
+    const portaStatus = router.query.portal_gun;
 
-    const [clickLista,setClickLista] = useState(false)
-    const [portalEvent,setPortalEvent] = useState(false)
-    const [disablePortal,setDisablePortal] = useState('true') //valor pego pela URL true e false
     const [listaPerson,setListaPerson] = useState([])
     const [indexInfo,setIndexInfo] = useState(0)
+    const [clickLista,setClickLista] = useState(false)
+    const [clickArrowPreview,setClickArrowPreview] = useState(false)
+
+    const [portalEvent,setPortalEvent] = useState(false)
+    const [disablePortal,setDisablePortal] = useState('true') //valor pego pela URL true e false
 
     useEffect(() => {
 
@@ -29,11 +31,11 @@ function HomePage(){
             
             var personId = res.data.results
             setListaPerson(personId)
-         
+            
         })
 
         setDisablePortal(portaStatus)
-   
+
     },[portaStatus])
     
     const slider = {
@@ -112,17 +114,19 @@ function HomePage(){
 
                     <div className="arrow-slider">
 
-                        <img className="arrow-left" src="images/arrow-left.png" onClick={() => {
-                            
+                        <img className="arrow-left" src="images/arrow-left.png" onClick={clickArrowPreview ? () => {} : () => {
+                            setClickArrowPreview(true)
                             var i = 19;
                             i--;
                             let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= 493.2;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= 541;
                             }else{
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX * 2;
                             }
-                    
+                            setTimeout(() => {
+                                setClickArrowPreview(false)
+                            },500)
                         }} />
 
                         <div className="preview-fotos-wrapper"> 
@@ -161,15 +165,19 @@ function HomePage(){
                             </div>{/*preview-fotos-scroll*/}
                         </div>{/*preview-fotos-wrapper*/}
 
-                        <img className="arrow-right" src="images/arrow-right.png" onClick={() => {
+                        <img className="arrow-right" src="images/arrow-right.png" onClick={clickArrowPreview ? () => {} : () => {
+                            setClickArrowPreview(true)
                             var i = 1;
                             i++;
                             let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft += 494;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft += 541;
                             }else{
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX * 2;
                             }
+                            setTimeout(() => {
+                                setClickArrowPreview(false)
+                            },500)
                         }} />
                         
                     </div>{/*arrow-slider*/}

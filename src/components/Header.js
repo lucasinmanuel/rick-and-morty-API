@@ -1,13 +1,30 @@
 import Link from 'next/link';
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { useRouter } from 'next/router';
 
 export default function Header(){
 
     const [hoverInfoPortal,setHoverInfoPortal] = useState(false)
-    const [disablePortal,setDisablePortal] = useState(true)
+    const [disablePortal,setDisablePortal] = useState(false)
     const router = useRouter()
-    
+    const [urlPathName,setUrlPathName] = useState(router.pathname)
+
+    useEffect(() => {
+      
+        const itemsMenuDesktop = document.querySelectorAll('nav.menu-desktop a')
+        const itemsMenuMobile = document.querySelectorAll('nav.menu-mobile a')
+
+        if(urlPathName === '/sobre'){
+            document.querySelector('.menu-desktop li:last-child').style.display = 'none';
+            itemsMenuDesktop[1].style.color = 'rgb(151, 215, 215)';
+            itemsMenuMobile[1].style.color = 'rgb(151, 215, 215)';
+        }else{
+            itemsMenuDesktop[0].style.color = 'rgb(151, 215, 215)';
+            itemsMenuMobile[0].style.color = 'rgb(151, 215, 215)';
+        }
+   
+    },[urlPathName])
+
     return (
         <>
             <header>
@@ -19,10 +36,11 @@ export default function Header(){
                         </div>
                     )}
 
-                    <Link href="/">
-                        <a><h1>Rick and <span>Morty</span></h1></a>
-                    </Link>
-
+                    <div className="logo-header">
+                        <Link href="/">
+                            <a><h1>Rick and <span>Morty</span></h1></a>
+                        </Link>
+                    </div>
                     <nav className="menu-desktop">
                         <ul>
                             <li><Link href="/"><a>Home</a></Link></li>
@@ -32,11 +50,11 @@ export default function Header(){
                                     if(disablePortal === true){
                                         document.querySelector('.menu-desktop li:last-child').style.opacity = 1;
                                         setDisablePortal(false)
-                                        router.push(`?portalGun=${disablePortal}`)
+                                        router.push(`?portal_gun=${disablePortal}`)
                                     }else{
                                         document.querySelector('.menu-desktop li:last-child').style.opacity = 0.5;
                                         setDisablePortal(true)
-                                        router.push(`?portalGun=${disablePortal}`)
+                                        router.push(`?portal_gun=${disablePortal}`)
                                     }
                                 }}
                                 onMouseOver={() => {setHoverInfoPortal(true)}}
@@ -45,9 +63,15 @@ export default function Header(){
                                 </button>
                             </li>
                         </ul>
-                    </nav>
+                    </nav>{/*menu-desktop*/}
                 </div>{/*container*/}
             </header>
+            <nav className="menu-mobile">
+                <ul>
+                    <li><Link href="/"><a>Home</a></Link></li>
+                    <li><Link href="/sobre"><a>Sobre</a></Link></li>
+                </ul>
+            </nav>{/*menu-mobile*/}
             <style jsx>{`
             
                 header{
@@ -74,7 +98,7 @@ export default function Header(){
                     color: hsl(55, 91%, 71%);
                 }
 
-                nav.menu-desktop ul{
+                nav ul{
                     list-style: none;
                 }
 
@@ -111,6 +135,33 @@ export default function Header(){
                     font-size: 15px;
                     color: white;
                     line-height: initial;
+                }
+                nav.menu-mobile{
+                    display: none;
+                }
+                @media screen and (max-width: 1020px){
+                    nav.menu-desktop{
+                        display: none;
+                    }
+                    .logo-header{
+                        width: 100%;
+                        text-align: center;
+                    }
+                    nav.menu-mobile{
+                        display: block;
+                        text-align: center;
+                    }
+                    .menu-mobile ul{
+                        list-style: none;
+                    }
+                    .menu-mobile li{
+                        display: inline-block;
+                        margin: 0 10px;
+                    }
+                    .menu-mobile a{
+                        text-decoration: none;
+                        color: white;
+                    }
                 }
             `}</style>
         </>

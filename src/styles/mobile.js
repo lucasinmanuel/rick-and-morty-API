@@ -3,11 +3,6 @@ export default function MobileStyles(){
         <style global jsx>{`
         
             @media screen and (max-width: 1020px){
-                /*Header-inicio*/
-                nav.menu-desktop{
-                    display: none;
-                }
-                /*Header-final*/
                 .container__personagem{
                     padding: 0;
                 }
@@ -47,7 +42,7 @@ export default function MobileStyles(){
                     display: flex;
                     align-items: center;
                     padding: 7px 5px;
-                    width: 989%;
+                    width: 990%;
                 }
                 .preview-fotos-single > img{
                     width: 100%;
