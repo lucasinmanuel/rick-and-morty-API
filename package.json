@@ -11,5 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  }
+  },
+  "author": "Lucas Emanuel Santana dos Santos",
+  "license": "MIT"
 }
