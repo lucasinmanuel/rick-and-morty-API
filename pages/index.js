@@ -80,7 +80,7 @@ function HomePage(){
                 <meta property="og:description" content="Projeto criado a partir da Rick and Morty API. Confira as informações de seus persoangens favoritos." />
                 <meta property="og:url" content="https://rick-and-morty-api-phi-eight.vercel.app/" />
                 <meta property="og:image" content="https://rick-and-morty-api-phi-eight.vercel.app/images/og-img.jpg" />
-                <meta property="og:image:type" content="image/jpeg" />
+                <meta property="og:image:type" content="image/jpg" />
                 <meta property="fb:app_id" content="2166958726772168" />
                 <link rel="icon" href="#" type="image/x-icon" />
             </Head>
