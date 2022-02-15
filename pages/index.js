@@ -66,7 +66,21 @@ function HomePage(){
         <>
             <Head>
                 <title>Rick and Morty</title>
+                <meta charset="utf-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+                <meta name="author" content="Lucas Emanuel Santana dos Santos" />
+                <meta name="description" content="Projeto pessoal - Rick and Morty API." />
+                <meta name="keywords" content="desenvolvimento web,seo,programação,web design,front-end,web developer,API,Rick and Morty" />
+                <meta name="robots" content="index,follow" />
+                <meta name="theme-color" content="#97d7d7" />
                 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+                <meta property="og:title" content="Projeto pessoal - Rick and Morty API" />
+                <meta property="og:site_name" content="Rick and Morty" />
+                <meta property="og:description" content="Projeto criado a partir da Rick and Morty API." />
+                <meta property="og:url" content="https://rick-and-morty-api-phi-eight.vercel.app/" />
+                <meta property="og:image" content="https://rick-and-morty-api-phi-eight.vercel.app/public/images/og-img.jpg" />
+                <meta property="og:image:type" content="image/jpeg" />
+                <link rel="icon" href="#" type="image/x-icon" />
             </Head>
             <main>
                 <Header />

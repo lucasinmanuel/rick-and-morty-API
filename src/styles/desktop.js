@@ -5,7 +5,7 @@ export default function DesktopStyles(){
                 scroll-behavior: smooth;
             }
             .container__personagem{
-                padding: 0 calc(3% - 1px);
+                padding: 0 3%;
                 margin: 0 auto;
                 max-width: 1280px;
                 position: relative;
@@ -17,7 +17,7 @@ export default function DesktopStyles(){
                 position: relative;
                 z-index: 4;
                 top: 60px;
-                left: 54px;
+                left: 52px;
             }
             .perfil-img{
                 margin-right: 40px;

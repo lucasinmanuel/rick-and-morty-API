@@ -29,13 +29,6 @@ export default function Header(){
         <>
             <header>
                 <div className="container">
-
-                    {hoverInfoPortal && (
-                        <div className="boxPortal-info">
-                            <p>Aperte para desativar/ativar o efeito do portal de transição utilizado para alterar o personagem selecionado.</p>
-                        </div>
-                    )}
-
                     <div className="logo-header">
                         <Link href="/">
                             <a><h1>Rick and <span>Morty</span></h1></a>
@@ -57,8 +50,16 @@ export default function Header(){
                                         router.push(`?portal_gun=${disablePortal}`)
                                     }
                                 }}
-                                onMouseOver={() => {setHoverInfoPortal(true)}}
+                                onMouseOver={(e) => {
+                                    setHoverInfoPortal(true)
+                                    e.stopPropagation()
+                                }}
                                 onMouseOut={() => {setHoverInfoPortal(false)}}>
+                                    {hoverInfoPortal && (
+                                        <div className="boxPortal-info">
+                                            <p>Aperte para desativar/ativar o efeito do portal de transição utilizado para alterar o personagem selecionado.</p>
+                                        </div>
+                                    )}
                                     <img src="images/arma-portais.png" />
                                 </button>
                             </li>
@@ -126,15 +127,12 @@ export default function Header(){
                     width: 250px;
                     background-color: rgb(151, 215, 215);
                     position: absolute;
-                    right: 20px;
-                    top: 70px;
+                    right: 0;
+                    top: 50px;
                     z-index: 20;
                     padding: 15px 25px 15px 15px;
-                }
-                .boxPortal-info{
-                    font-size: 15px;
+                    font-size: 16px;
                     color: white;
-                    line-height: initial;
                 }
                 nav.menu-mobile{
                     display: none;
