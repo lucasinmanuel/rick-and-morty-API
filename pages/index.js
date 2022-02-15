@@ -81,7 +81,7 @@ function HomePage(){
                 <meta property="og:url" content="https://rick-and-morty-api-phi-eight.vercel.app/" />
                 <meta property="og:image" content="https://rick-and-morty-api-phi-eight.vercel.app/images/og-img.jpg" />
                 <meta property="og:image:type" content="image/jpg" />
-                <link rel="icon" href="#" type="image/x-icon" />
+                <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
             </Head>
             <main>
                 <Header />
