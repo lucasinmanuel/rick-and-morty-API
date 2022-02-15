@@ -78,7 +78,7 @@ function HomePage(){
                 <meta property="og:site_name" content="Rick and Morty" />
                 <meta property="og:description" content="Projeto criado a partir da Rick and Morty API." />
                 <meta property="og:url" content="https://rick-and-morty-api-phi-eight.vercel.app/" />
-                <meta property="og:image" content="https://rick-and-morty-api-phi-eight.vercel.app/public/images/og-img.jpg" />
+                <meta property="og:image" content="https://rick-and-morty-api-phi-eight.vercel.app/images/og-img.jpg" />
                 <meta property="og:image:type" content="image/jpeg" />
                 <link rel="icon" href="#" type="image/x-icon" />
             </Head>
