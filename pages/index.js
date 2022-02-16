@@ -70,7 +70,7 @@ function HomePage(){
                 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
                 <meta name="author" content="Lucas Emanuel Santana dos Santos" />
                 <meta name="description" content="Projeto criado a partir da Rick and Morty API. Confira as informações de seus persoangens favoritos." />
-                <meta name="keywords" content="desenvolvimento web,seo,programação,web design,front-end,web developer,API,Rick and Morty" />
+                <meta name="keywords" content="wiki,desenvolvimento web,seo,programação,web design,front-end,web developer,API,Rick and Morty" />
                 <meta name="robots" content="index,follow" />
                 <meta name="theme-color" content="#97d7d7" />
                 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
