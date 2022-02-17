@@ -8,8 +8,8 @@
 
 <h2>Ferramentas utilizadas</h2>
  <ul>
-  <li><b>React JS</b>: <a href="https://pt-br.reactjs.org/">link para a ferramenta</a></li>
-  <li><b>Next.js</b>: <a href="https://nextjs.org/">link para a ferramenta</a></li></li>
-  <li><b>Axios</b>: <a href="https://axios-http.com/">link para a ferramenta</a></li></li>
-  <li><b>Framer Motion</b>: <a href="https://www.framer.com/motion/">link para a ferramenta</a></li></li>
+  <li><a href="https://pt-br.reactjs.org/"><b>React JS</b></a>: biblioteca para JavaScript utilizada para criação deste site.</li>
+  <li><a href="https://nextjs.org/"><b>Next.js</b></a>: um dos frameworks para React mais famosos do mercado.</li>
+  <li><a href="https://axios-http.com/"><b>Axios</b></a>: utilizei a biblioteca Axios para fazer as requisições a API.</li>
+  <li><a href="https://www.framer.com/motion/"><b>Framer Motion</b></a>:  algumas animações foram criadas usando a biblioteca Framer Motion.</li>
  </ul>
