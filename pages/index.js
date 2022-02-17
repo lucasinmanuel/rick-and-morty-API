@@ -132,7 +132,7 @@ function HomePage(){
                         <img className="arrow-left" src="images/arrow-left.png" onClick={clickArrowPreview ? () => {} : () => {
                             setClickArrowPreview(true)
                             var i = 19;
-                            i-=3;
+                            i--;
                             let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= 541;
@@ -183,7 +183,7 @@ function HomePage(){
                         <img className="arrow-right" src="images/arrow-right.png" onClick={clickArrowPreview ? () => {} : () => {
                             setClickArrowPreview(true)
                             var i = 0;
-                            i+=3;
+                            i++;
                             let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += 541;
