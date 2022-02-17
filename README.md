@@ -8,6 +8,8 @@
 
 <h2>Ferramentas utilizadas</h2>
  <ul>
-  <li>item 1</li>
-  <li>item 2</li>
+  <li><b>React JS</b>: <a href="https://pt-br.reactjs.org/">link para a ferramenta</a></li>
+  <li><b>Next.js</b>: <a href="https://nextjs.org/">link para a ferramenta</a></li></li>
+  <li><b>Axios</b>: <a href="https://axios-http.com/">link para a ferramenta</a></li></li>
+  <li><b>Framer Motion</b>: <a href="https://www.framer.com/motion/">link para a ferramenta</a></li></li>
  </ul>
