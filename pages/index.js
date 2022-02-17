@@ -131,9 +131,9 @@ function HomePage(){
 
                         <img className="arrow-left" src="images/arrow-left.png" onClick={clickArrowPreview ? () => {} : () => {
                             setClickArrowPreview(true)
-                            var i = 19
-                            i-=2
-                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollLeft;
+                            var i = 19;
+                            i-=2;
+                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= 541;
                             }else{
@@ -182,9 +182,9 @@ function HomePage(){
 
                         <img className="arrow-right" src="images/arrow-right.png" onClick={clickArrowPreview ? () => {} : () => {
                             setClickArrowPreview(true)
-                            var i = 0
-                            i+=2
-                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollLeft;
+                            var i = 0;
+                            i+=2;
+                            let previewOffSetX = document.querySelectorAll('.preview-fotos-single')[i].scrollWidth;
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += 541;
                             }else{
