@@ -44,6 +44,9 @@ export default function MobileStyles(){
                     padding: 7px 5px;
                     width: 990%;
                 }
+                .preview-fotos-single{
+                    padding: 0 8px;
+                }
                 .preview-fotos-single > img{
                     width: 100%;
                 }
