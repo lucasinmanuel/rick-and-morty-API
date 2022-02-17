@@ -137,7 +137,7 @@ function HomePage(){
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft -= 541;
                             }else{
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft -= previewOffSetX * 2;
                             }
                             setTimeout(() => {
                                 setClickArrowPreview(false)
@@ -188,7 +188,7 @@ function HomePage(){
                             if(window.innerWidth > 1020){
                                 document.querySelector('.preview-fotos-wrapper').scrollLeft += 541;
                             }else{
-                                document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX;
+                                document.querySelector('.preview-fotos-wrapper').scrollLeft += previewOffSetX * 2;
                             }
                             setTimeout(() => {
                                 setClickArrowPreview(false)
