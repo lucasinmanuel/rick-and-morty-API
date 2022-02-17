@@ -41,11 +41,11 @@ export default function MobileStyles(){
                 .preview-fotos-scroll{
                     display: flex;
                     align-items: center;
-                    padding: 7px 5px;
+                    padding: 7px 0;
                     width: 990%;
                 }
                 .preview-fotos-single{
-                    padding: 0 12px;
+                    padding: 0 8px;
                 }
                 .preview-fotos-single > img{
                     width: 100%;
