@@ -26,6 +26,9 @@ function GlobalStyles(){
                 background-color: black;
                 font-family: 'Open Sans', sans-serif;
             }
+            body::-webkit-scrollbar {
+                background-color: black;
+            } 
 
         `}</style>
     )
