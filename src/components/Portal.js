@@ -28,7 +28,7 @@ export default function Portal(){
                     position: absolute;
                     right: -923px;
                     top: -28px;
-                    z-index: 5;
+                    z-index: 6;
                     max-height: 560px;
                     -moz-filter: blur(1.5px);
                     -o-filter: blur(1.5px);
