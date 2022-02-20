@@ -18,17 +18,14 @@ function GlobalStyles(){
 
             html,body{
                 height: 100%; 
+                background-color: black;
             }
 
             body{
                 overflow-y: auto;
                 overflow-x: hidden;
-                background-color: black;
                 font-family: 'Open Sans', sans-serif;
             }
-            body::-webkit-scrollbar {
-                background-color: black;
-            } 
 
         `}</style>
     )
