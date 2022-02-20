@@ -23,7 +23,7 @@ function GlobalStyles(){
             body{
                 overflow-y: auto;
                 overflow-x: hidden;
-                background-color: white;
+                background-color: black;
                 font-family: 'Open Sans', sans-serif;
             }
 
