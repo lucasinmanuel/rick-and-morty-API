@@ -50,7 +50,7 @@ function HomePage(){
             }
         },
         hidden: {
-            x: 1000,
+            x: 1300,
             y: 0,
             position: "relative",
             zIndex: 4,
