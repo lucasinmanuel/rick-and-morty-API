@@ -15,7 +15,7 @@ export default function Portal(){
             <style jsx>{`
                 video.portal{
                     position: absolute;
-                    right: -100px;
+                    right: -50px;
                     max-height: 560px;
                     top: -28px;
                     z-index: 1;
@@ -26,7 +26,7 @@ export default function Portal(){
                 }
                 video.portal-mascara{
                     position: absolute;
-                    right: -938px;
+                    right: -888px;
                     top: -28px;
                     z-index: 5;
                     max-height: 560px;
